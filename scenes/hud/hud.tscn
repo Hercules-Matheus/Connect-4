@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkj4l046pm4sg"]
+
+[ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_v2msj"]
+[ext_resource type="FontVariation" uid="uid://c2jitq0fh0ntv" path="res://fonts/Chewy-Regular.tres" id="2_8sswc"]
+[ext_resource type="Texture2D" uid="uid://bp5eqw6ojv88g" path="res://assets/play_soundtrack.png" id="3_3slkk"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_v2msj")
+
+[node name="LabelWinner" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.85
+anchor_right = 0.5
+anchor_bottom = 0.85
+offset_left = -0.5
+offset_top = -78.0
+offset_right = 0.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.129412, 0.129412, 0.129412, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_8sswc")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+
+[node name="ReplayButton" type="Button" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_8sswc")
+theme_override_font_sizes/font_size = 32
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 42.0
+offset_top = 39.0
+offset_right = 170.0
+offset_bottom = 167.0
+texture_normal = ExtResource("3_3slkk")
+stretch_mode = 0
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

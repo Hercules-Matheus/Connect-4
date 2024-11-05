@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://r3cwmgxawfdd"]
+
+[ext_resource type="Script" path="res://scripts/board/board.gd" id="1_iuc2a"]
+[ext_resource type="PackedScene" uid="uid://bkj4l046pm4sg" path="res://scenes/hud/hud.tscn" id="2_w62es"]
+[ext_resource type="PackedScene" uid="uid://cmkjxlabb16mk" path="res://scenes/background/background.tscn" id="3_w0s67"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_iuc2a")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 538.0
+offset_top = 364.0
+offset_right = 1537.0
+offset_bottom = 1010.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 15
+columns = 7
+
+[node name="HUD" parent="." instance=ExtResource("2_w62es")]
+
+[node name="Background" parent="." instance=ExtResource("3_w0s67")]
+
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]

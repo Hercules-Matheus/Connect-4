@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c2jitq0fh0ntv"]
+
+[ext_resource type="FontFile" uid="uid://cxdx7v5h60qlf" path="res://fonts/Chewy-Regular.ttf" id="1_wra5r"]
+
+[resource]
+base_font = ExtResource("1_wra5r")

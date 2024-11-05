@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Connect4"
+run/main_scene="res://scenes/board/board.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+config/icon_16="res://icon_16.png"
+config/icon_48="res://icon_48.png"
+config/icon_64="res://icon_64.png"
+config/icon_128="res://icon_128.png"
+config/icon_256="res://icon_256.png"
+
+[display]
+
+window/size/viewport_width=2048
+window/size/viewport_height=1360
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Atvd-faculdade"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
